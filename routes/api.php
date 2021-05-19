@@ -21,3 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/menus', 'MenuController@index');
 Route::get('/menus/{id}', 'MenuController@menuItem');
 Route::get('/menus/category/{name}', 'MenuController@menuCategory');
+
+Route::resource('/booking', 'BookingController');

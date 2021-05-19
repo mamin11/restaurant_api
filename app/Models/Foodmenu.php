@@ -11,9 +11,9 @@ class Foodmenu extends Model
 
     protected $casts = [
         'id' => 'integer',
-        'price' => 'integer',
+        // 'price' => 'decimal:2',
     ];
-    
+
     protected $fillable = [
         'title',
         'price',
