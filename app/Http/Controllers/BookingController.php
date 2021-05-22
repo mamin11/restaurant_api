@@ -38,17 +38,17 @@ class BookingController extends Controller
     public function store(Request $request)
     {
 
-        // $validator = Validator::make($request->all(), [
-        //     'email' => 'required',
-        //     'start_time' => 'required|unique:bookings,start_time',
-        //     'end_time' => 'required|unique:bookings,end_time',
-        // ]);
+        $validator = Validator::make($request->all(), [
+            'email' => 'required',
+            'start_time' => 'required|unique:bookings,start_time',
+            'end_time' => 'required|unique:bookings,end_time',
+        ]);
 
-        // if($validator->fails()) {
-        //     return response([
-        //         'message' => 'Error '.$validator->errors()
-        //     ], 400);
-        // }
+        if($validator->fails()) {
+            return response([
+                'message' => 'Error '.$validator->errors()
+            ], 400);
+        }
 
         return Booking::create($request->all());
     }
